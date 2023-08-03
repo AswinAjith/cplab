@@ -17,5 +17,6 @@ for(i=0;i<n;i++){
     }
 }
 printf("The largest number is:%d",arr[n-1]);
+printf("The smallest number is:%d",arr[0]);
 return 0;
 }
