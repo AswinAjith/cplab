@@ -1,27 +1,28 @@
 #include <stdio.h>
 
-int fact(int x) {
-	if (x!=1) {
-		return x*fact(x-1);
-	}
-	return 1;
-}
 int main() {
-	int number, x, sum;
-	printf("Enter the number: ");
-	scanf("%d",&number);
-	while (number!=0) {
-		x = number%10;
-		number = number/10;
-		sum += fact(x);
-	}
-	printf("%d",sum);
+    int num, originalNum, digit, sum = 0, fact = 1;
 
+    printf("Enter a number: ");
+    scanf("%d", &num);
 
-	if(sum == number){
-		printf("The number is strong");
-	}else if(sum != number) {
-		printf("The number is not strong");
-	}
-	return 0;
+    originalNum = num;
+
+    while (num > 0) {
+        digit = num % 10;
+        for (int i = 1; i <= digit; i++) {
+            fact *= i;
+        }
+        sum += fact;
+        fact = 1;
+        num /= 10;
+    }
+
+    if (sum == originalNum) {
+        printf("%d is a strong number.\n", originalNum);
+    } else {
+        printf("%d is not a strong number.\n", originalNum);
+    }
+
+    return 0;
 }
