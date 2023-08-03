@@ -5,8 +5,8 @@ int t1=0, t2=1,t3=0;
 printf("Enter number of terms needed for fibonacci:");
 scanf("%d",&n);
 int arr[n];
-arr[0]=t1;
-arr[1]=t2;
+arr[0]=0;
+arr[1]=1;
 for(i=2;i<n;i++){
     t3=t1+t2;
     arr[i]=t3;
